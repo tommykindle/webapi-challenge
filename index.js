@@ -18,7 +18,8 @@ const server = express();
 server.use(express.json())
 
 const projectRoute = require('./routes/projectRoutes')
-
+const actionRoute = require('./routes/actionRoutes')
+server.use('/api/projects/:id/actions', actionRoute)
 server.use('/api/projects', projectRoute)
 const port = 8000
 
